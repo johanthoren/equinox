@@ -1,5 +1,5 @@
-(defproject xyz.thoren/equinox "0.1.0"
-  :description "A Clojure library designed to calculate equinox and solstice"
+(defproject xyz.thoren/equinox "0.1.1-SNAPSHOT"
+  :description "Calculate equinoxes and solstices for a given year"
   :url "https://github.com/johanthoren/equinox"
   :license {:name "ISC"
             :url "https://choosealicense.com/licenses/isc"
