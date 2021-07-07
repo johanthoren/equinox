@@ -9,4 +9,13 @@
   :dependencies [[org.clojure/clojure "1.10.3"]]
   :repl-options {:init-ns xyz.thoren.equinox}
   :repositories [["releases" {:url "https://repo.clojars.org"
-                              :creds :gpg}]])
+                              :creds :gpg}]]
+  :release-tasks [["test"]
+                  ["vcs" "assert-committed"]
+                  ["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag"]
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]])
