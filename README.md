@@ -20,19 +20,19 @@ Require:
 Examples:
 
 ``` clojure
-(vernal-equinox 2021)
+(e/march-equinox 2021)
 ;;=> {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}
 
-(summer-solstice 2021)
+(e/june-solstice 2021)
 ;;=> {:year 2021, :month 6, :day 21, :hour 3, :minute 24, :second 13}
 
-(autumnal-equinox 2021)
+(e/september-equinox 2021)
 ;;=> {:year 2021, :month 9, :day 22, :hour 19, :minute 11, :second 14}
 
-(winter-solstice 2021)
+(e/december-solstice 2021)
 ;;=> {:year 2021, :month 12, :day 21, :hour 15, :minute 46, :second 8}
 
-(jdn->gregorian-time 2459293.8997175973)
+(e/jdn->gregorian-time 2459293.8997175973)
 ;;=> {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}
 ```
 

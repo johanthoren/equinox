@@ -39,11 +39,12 @@
      :minute minute
      :second second}))
 
-(defn vernal-equinox
-  "Given a `year`, return a map with the Gregorian time of the vernal (March)
-  equinox.
+(defn march-equinox
+  "Given a `year`, return a map with the Gregorian time of the March equinox.
+
   See also: `jdn->gregorian-time`.
-  Example: (vernal-equinox 2021)
+
+  Example: (march-equinox 2021)
   => {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}"
   [year]
   (let [m (/ (- (double year) 2000) 1000)
@@ -57,11 +58,12 @@
               (* 0.00057 m4))]
     (jdn->gregorian-time jdn)))
 
-(defn summer-solstice
-  "Given a `year`, return a map with the Gregorian time of the summer (June)
-  solstice.
+(defn june-solstice
+  "Given a `year`, return a map with the Gregorian time of the June solstice.
+
   See also: `jdn->gregorian-time`.
-  Example: (summer-solstice 2021)
+
+  Example: (june-solstice 2021)
   => {:year 2021, :month 6, :day 21, :hour 3, :minute 24, :second 13}"
   [year]
   (let [m (/ (- (double year) 2000) 1000)
@@ -75,11 +77,13 @@
                (* 0.00030 m4))]
     (jdn->gregorian-time jdn)))
 
-(defn autumnal-equinox
-  "Given a `year`, return a map with the Gregorian time of the autumnal
-  (September) equinox.
+(defn september-equinox
+  "Given a `year`, return a map with the Gregorian time of the September
+  equinox.
+
   See also: `jdn->gregorian-time`.
-  Example: (autumnal-equinox 2021)
+
+  Example: (september-equinox 2021)
   => {:year 2021, :month 9, :day 22, :hour 19, :minute 11, :second 14}"
   [year]
   (let [m (/ (- (double year) 2000) 1000)
@@ -93,11 +97,13 @@
                (* 0.11575 m2))]
     (jdn->gregorian-time jdn)))
 
-(defn winter-solstice
-  "Given a `year`, return a map with the Gregorian time of the winter (December)
+(defn december-solstice
+  "Given a `year`, return a map with the Gregorian time of the December
   solstice.
+
   See also: `jdn->gregorian-time`.
-  Example: (winter-solstice 2021)
+
+  Example: (december-solstice 2021)
   => {:year 2021, :month 12, :day 21, :hour 15, :minute 46, :second 8}"
   [year]
   (let [m (/ (- (double year) 2000) 1000)
