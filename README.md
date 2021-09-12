@@ -1,6 +1,6 @@
 # equinox
 
-A Clojure library designed to calculate equinoxes and solstices for a given year. 
+A Clojure(Script) library designed to calculate equinoxes and solstices for a given year. 
 The accuracy is within a few minutes. It also contains the function 
 `jdn->gregorian-time`, which will 
 [calculate the gregorian time from a Julian Day Number](https://en.wikipedia.org/wiki/Julian_day#Julian_day_number_calculation).
