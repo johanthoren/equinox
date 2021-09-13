@@ -1,4 +1,4 @@
-(defproject xyz.thoren/equinox "1.1.0-SNAPSHOT"
+(defproject xyz.thoren/equinox "1.1.0"
   :description "Calculate equinoxes and solstices for a given year"
   :url "https://github.com/johanthoren/equinox"
   :license {:name "ISC"
