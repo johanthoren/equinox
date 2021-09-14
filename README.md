@@ -1,4 +1,4 @@
-# equinox
+# xyz.thoren/equinox
 
 A Clojure(Script) library designed to calculate equinoxes and solstices for a
 given year. The accuracy is within a few minutes.
