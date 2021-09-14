@@ -1,4 +1,4 @@
-(defproject xyz.thoren/equinox "1.1.1-SNAPSHOT"
+(defproject xyz.thoren/equinox "2.0.0-SNAPSHOT"
   :description "Calculate equinoxes and solstices for a given year"
   :url "https://github.com/johanthoren/equinox"
   :license {:name "ISC"
@@ -6,7 +6,8 @@
             :comment "ISC License"
             :year 2021
             :key "isc"}
-  :dependencies [[org.clojure/clojure "1.10.3"]]
+  :dependencies [[org.clojure/clojure "1.10.3"]
+                 [xyz.thoren/julian "1.0.0"]]
   :repl-options {:init-ns xyz.thoren.equinox}
   :repositories [["releases" {:url "https://repo.clojars.org"
                               :creds :gpg}]]

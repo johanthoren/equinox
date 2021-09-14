@@ -1,11 +1,7 @@
 # equinox
 
-A Clojure(Script) library designed to calculate equinoxes and solstices for a given year. 
-The accuracy is within a few minutes. It also contains the function 
-`jdn->gregorian-time`, which will 
-[calculate the gregorian time from a Julian Day Number](https://en.wikipedia.org/wiki/Julian_day#Julian_day_number_calculation).
-
-Based on the calculations by Jean Meeus.
+A Clojure(Script) library designed to calculate equinoxes and solstices for a
+given year. The accuracy is within a few minutes.
 
 ## Usage
 
@@ -31,9 +27,6 @@ Examples:
 
 (e/december-solstice 2021)
 ;;=> {:year 2021, :month 12, :day 21, :hour 15, :minute 46, :second 8}
-
-(e/jdn->gregorian-time 2459293.8997175973)
-;;=> {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}
 ```
 
 ## License
@@ -41,7 +34,7 @@ Examples:
 ```
 ISC License
 
-Copyright (c) 2021, Johan Thoren
+Copyright (c) 2021, Johan Thorén
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

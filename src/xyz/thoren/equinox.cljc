@@ -1,50 +1,8 @@
-(ns xyz.thoren.equinox)
-
-(defn jdn->gregorian-time
-  "Given a Julian Day Number `jdn`, return a map with the Gregorian time.
-
-  Example: (jdn->gregorian-time 2459293.8997175973)
-  => {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}"
-  [jdn]
-  {:pre [(number? jdn)]}
-  (let [julian (+ 0.5 jdn)
-        z (int julian)
-        f (- julian (int julian))
-        a (if (< z 2299161)
-            z
-            (let [alpha (int (/ (- z 1867216.25) 36524.25))]
-              (+ z 1 (- alpha (int (/ alpha 4))))))
-        b (+ a 1524)
-        c (int (/ (- b 122.1) 365.25))
-        d (int (* 365.25 c))
-        e (int (/ (- b d) 30.6001))
-        month (if (< e 14)
-                (dec e)
-                (- e 13))
-        year (if (> month 2)
-               (- c 4716)
-               (- c 4715))
-        day-with-decimal (+ f (- b d (int (* 30.6001 e))))
-        day (int day-with-decimal)
-        fraction-of-day (- day-with-decimal day)
-        hour-with-decimal (* 24 fraction-of-day)
-        hour (int hour-with-decimal)
-        fraction-of-hour (- hour-with-decimal hour)
-        minute-with-decimal (* 60 fraction-of-hour)
-        minute (int minute-with-decimal)
-        fraction-of-minute (- minute-with-decimal minute)
-        second (int (* 60 fraction-of-minute))]
-    {:year year
-     :month month
-     :day day
-     :hour hour
-     :minute minute
-     :second second}))
+(ns xyz.thoren.equinox
+  (:require [xyz.thoren.julian :refer [jdn->time]]))
 
 (defn march-equinox
   "Given a `year`, return a map with the Gregorian time of the March equinox.
-
-  See also: [[jdn->gregorian-time]].
 
   Example: (march-equinox 2021)
   => {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}"
@@ -58,12 +16,10 @@
                   (* 0.05169 m2))
               (* 0.00411 m3)
               (* 0.00057 m4))]
-    (jdn->gregorian-time jdn)))
+    (jdn->time jdn)))
 
 (defn june-solstice
   "Given a `year`, return a map with the Gregorian time of the June solstice.
-
-  See also: [[jdn->gregorian-time]].
 
   Example: (june-solstice 2021)
   => {:year 2021, :month 6, :day 21, :hour 3, :minute 24, :second 13}"
@@ -77,13 +33,11 @@
                  (* 0.00325 m2)
                  (* 0.00888 m3))
                (* 0.00030 m4))]
-    (jdn->gregorian-time jdn)))
+    (jdn->time jdn)))
 
 (defn september-equinox
   "Given a `year`, return a map with the Gregorian time of the September
   equinox.
-
-  See also: [[jdn->gregorian-time]].
 
   Example: (september-equinox 2021)
   => {:year 2021, :month 9, :day 22, :hour 19, :minute 11, :second 14}"
@@ -97,13 +51,11 @@
                  (* 0.00337 m3)
                  (* 0.00078 m4))
                (* 0.11575 m2))]
-    (jdn->gregorian-time jdn)))
+    (jdn->time jdn)))
 
 (defn december-solstice
   "Given a `year`, return a map with the Gregorian time of the December
   solstice.
-
-  See also: [[jdn->gregorian-time]].
 
   Example: (december-solstice 2021)
   => {:year 2021, :month 12, :day 21, :hour 15, :minute 46, :second 8}"
@@ -117,4 +69,4 @@
                  (* 0.00032 m4))
                (* 0.06223 m2)
                (* 0.00823 m3))]
-    (jdn->gregorian-time jdn)))
+    (jdn->time jdn)))
