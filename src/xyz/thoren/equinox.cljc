@@ -5,7 +5,7 @@
   "Given a `year`, return a map with the Gregorian time of the March equinox.
 
   Example: (march-equinox 2021)
-  => {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}"
+  => {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 36}"
   [year]
   (let [m (/ (- (double year) 2000) 1000)
         m2 (* m m)

@@ -17,7 +17,7 @@ Examples:
 
 ``` clojure
 (e/march-equinox 2021)
-;;=> {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 35}
+;;=> {:year 2021, :month 3, :day 20, :hour 9, :minute 35, :second 36}
 
 (e/june-solstice 2021)
 ;;=> {:year 2021, :month 6, :day 21, :hour 3, :minute 24, :second 13}
