@@ -7,7 +7,7 @@
             :year 2021
             :key "isc"}
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [xyz.thoren/julian "1.0.0"]]
+                 [xyz.thoren/julian "1.0.1"]]
   :repl-options {:init-ns xyz.thoren.equinox}
   :repositories [["releases" {:url "https://repo.clojars.org"
                               :creds :gpg}]]
